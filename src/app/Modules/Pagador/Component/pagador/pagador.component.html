@@ -1,0 +1,113 @@
+<mat-card class="background">
+
+  <h2 class="alinear-titulo">USUARIO PAGADOR</h2>
+
+  <mat-card-header>
+    <div>
+        <mat-form-field hintLabel="Busqueda Usuario" appearance="fill">
+          <mat-label>Buscar Usuario</mat-label>
+          <input matInput>
+        </mat-form-field>
+    </div>
+  </mat-card-header>
+
+  <mat-card-header>
+    <div class="alinear-nuevo" fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button mat-raised-button color="primary">Agregar Usuario</button>
+          </li>
+        </ul>
+    </div>
+  </mat-card-header>
+
+  <div mat-card-image></div>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource">
+
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="usuario_nombre">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element">{{element.usuario_nombre}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="usuario_identificacion">
+        <th mat-header-cell *matHeaderCellDef> Cedula </th>
+        <td mat-cell *matCellDef="let element">{{element.usuario_identificacion}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="usuario_gmail">
+        <th mat-header-cell *matHeaderCellDef>  E-mail </th>
+        <td mat-cell *matCellDef="let element">{{element.usuario_gmail}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="rol_p">
+        <th mat-header-cell *matHeaderCellDef> Nombre Rol </th>
+        <td mat-cell *matCellDef="let element ">{{element.rol_p}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_codigo">
+        <th mat-header-cell *matHeaderCellDef> Codigo </th>
+        <td mat-cell *matCellDef="let element ">{{element.trans_codigo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_medio_pago">
+        <th mat-header-cell *matHeaderCellDef> Medio de pago </th>
+        <td mat-cell *matCellDef="let element">{{element.trans_medio_pago}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element">{{element.trans_estado}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_total">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+        <td mat-cell *matCellDef="let element">{{element.trans_total}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element">{{element.trans_fecha}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="trans_concepto">
+        <th mat-header-cell *matHeaderCellDef> Concepto </th>
+        <td mat-cell *matCellDef="let element">{{element.trans_concepto}}</td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element; let i=index;">
+
+          <button mat-icon-button color="accent">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="accent">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+
+        </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+
+
+</mat-card>

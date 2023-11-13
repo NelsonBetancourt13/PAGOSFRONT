@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './Component/sidenav/sidenav.component';
 import {RouterModule} from "@angular/router";
 import {MaterialModule} from "./angular-material.module";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 
@@ -13,7 +14,8 @@ import {MaterialModule} from "./angular-material.module";
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   exports:[SidenavComponent]
 })

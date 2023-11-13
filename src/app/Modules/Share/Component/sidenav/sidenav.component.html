@@ -1,2 +1,54 @@
-<p>sidenav works!</p>
+<div>
+  <!--EMPIEZA SIDENAV-MENU -->
+  <mat-toolbar color="primary">
+    <mat-card-header>
+      <div class="derecha">
+        <button mat-raised-button color="primary" class="icono-clinical" style="position: page">
+          <a class="demo-text" [routerLink]="nav.route" *ngFor="let nav of menuNav" style="color: white">
+            <mat-icon style="color: white" class="demo-text">{{nav.icon}}</mat-icon>
+            {{nav.name}}
+          </a>
+        </button>
+      </div>
+    </mat-card-header>
+
+    <div class="derecha">
+
+      <button mat-button>
+        <a class="demo-text" [routerLink]="nav.route" *ngFor="let nav of menuNav4" style="color: white">
+          <mat-icon style="color: white;" class="demo-text">{{nav.icon}} </mat-icon>
+          {{nav.name}}
+        </a>
+      </button>
+
+      <button mat-button>
+        <a class="demo-text" [routerLink]="nav.route" *ngFor="let nav of menuNav3" style="color: white">
+          <mat-icon style="color: white;" class="demo-text">{{nav.icon}} </mat-icon>
+          {{nav.name}}
+        </a>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>
+
+
+
+
+<!--
+ <button mat-button>
+   <a class="demo-text" [routerLink]="nav.route" *ngFor="let nav of menuNav2" style="color: white">
+     <mat-icon style="color: white;" class="demo-text">{{nav.icon}} </mat-icon>
+     {{nav.name}}
+   </a>
+ </button>&nbsp;&nbsp;&nbsp;
+ -->
+
+<!--
+<button mat-button>
+  <a class="demo-text" [routerLink]="nav.route" *ngFor="let nav of menuNav3" style="color: white">
+    <mat-icon style="color: white;" class="demo-text">{{nav.icon}} </mat-icon>
+    {{nav.name}}
+  </a>
+</button>
+-->
