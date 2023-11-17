@@ -1,0 +1,30 @@
+<img class="ilustracion" ngSrc="assets/login.svg" alt="" height="700" width="700">
+<div class="  d-flex  justify-content-center">
+  <div class="row justify-content-center w-75">
+      <div class="">
+        <img class="card-body" ngSrc="assets/Avatar.png" alt="" height="170" width="200">
+        <div class="">
+          <form action="" class="row w-25 ">
+            <div class="form-floating mb-4">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Nombre Usuario</mat-label>
+                <input required matInput placeholder="Digite nombre usuario">
+                <mat-hint>Nombre debe ser valido! </mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="form-floating mb-3">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input required type="password" matInput placeholder="Digite contraseña">
+                <mat-hint>Contraseña debe ser valido! </mat-hint>
+              </mat-form-field>
+            </div>
+
+            <button class="btn btn-primary" (click)="login()"> Iniciar Sesion </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
