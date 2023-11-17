@@ -1,1 +1,93 @@
-<p>comercio works!</p>
+<mat-card class="background">
+
+  <h2 class="alinear-titulo">REGISTROS DE PAGOS QUE SE HAN REALIZADO</h2>
+
+  <mat-card-header>
+    <div>
+      <mat-form-field hintLabel="Busqueda Pago" appearance="fill">
+        <mat-label>Buscar Pago</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+  <mat-card-header>
+    <div class="alinear-nuevo" fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <ul fxLayout="row" fxLayoutGap="20px">
+        <li>
+          <button mat-raised-button color="primary">Realizar Pago</button>
+        </li>
+      </ul>
+    </div>
+  </mat-card-header>
+
+  <div mat-card-image></div>
+
+  <mat-card-content>
+
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="comercio_nombre">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Comercio_Nombre </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center" >{{element.comercio?.comercio_nombre}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> id </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_codigo">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Codigo </th>
+        <td mat-cell *matCellDef="let element " style="text-align: center">{{element.trans_codigo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_medio_pago">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Medio pago </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">{{element.trans_medio_pago}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_estado">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Estado </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">{{element.trans_estado}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_total">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Total </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center" >{{element.trans_total}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trans_fecha">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Fecha </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center">{{element.trans_fecha}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="trans_concepto">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Concepto </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center" >{{element.trans_concepto}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center"> Acciones </th>
+        <td mat-cell *matCellDef="let element; let i=index;">
+
+          <button mat-icon-button color="accent">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="accent">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+
+        </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+
+</mat-card>

@@ -7,6 +7,7 @@ import {ShareModule} from "../Share/share.module";
 import {MaterialModule} from "../Share/angular-material.module";
 import {ComercioModule} from "../Comercio/comercio.module";
 import {PagadorModule} from "../Pagador/pagador.module";
+import {LoginModule} from "../Login/login.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {PagadorModule} from "../Pagador/pagador.module";
         NgOptimizedImage,
         MaterialModule,
         ComercioModule,
-        PagadorModule
+        PagadorModule,
+        LoginModule
     ]
 })
 

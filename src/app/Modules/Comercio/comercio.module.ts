@@ -13,7 +13,8 @@ import {MaterialModule} from "../Share/angular-material.module";
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+
   ]
 })
 export class ComercioModule { }
