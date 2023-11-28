@@ -52,7 +52,7 @@ export class ComercioComponent  implements OnInit{
 
     listComercio[0].pagos.forEach((element:ComercioElement) =>{
       dataComercio.push(element);
-      console.log(element.comercio);
+      //console.log(element.comercio);
 
     });
 

@@ -1,0 +1,52 @@
+
+<h2 mat-dialog-title style="text-align: center">Nuevo Pago</h2>
+<mat-dialog-content>
+  <form [formGroup]="pagoForm" >
+    <div class="pago-container">
+
+      <mat-form-field>
+        <input matInput placeholder="Codigo" formControlName="trans_codigo" required type=""/>
+        <mat-hint>Codigo debe ser valido! </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Medio de Pago" formControlName="trans_medio_pago" required type=""/>
+        <mat-hint>Pago debe ser valido! </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Estado" formControlName="trans_estado" required  type=""/>
+        <mat-hint>Estado debe ser valido! </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Fecha" formControlName="trans_fecha" required  type="text"/>
+        <mat-hint>Fecha debe ser valido! </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Concepto" formControlName="trans_concepto" required  type="text"/>
+        <mat-hint>Concepto debe ser valido! </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Total" formControlName="trans_total" required />
+        <mat-hint>Total debe ser valido! </mat-hint>
+      </mat-form-field>
+
+    </div>
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+  <button mat-button color="primary" (click)="onSave()" [disabled]="pagoForm.invalid">
+    <mat-icon>save</mat-icon>Guardar
+  </button>
+
+  <button mat-button color="primary" (click)="onCancel()">
+    <mat-icon>cancel</mat-icon>Cancelar
+  </button>
+
+</mat-dialog-actions>

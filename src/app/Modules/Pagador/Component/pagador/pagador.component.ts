@@ -1,6 +1,9 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {PagadorService} from "../../../Share/Services/pagador.service";
+import {PagadorService} from "../../Services/pagador.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatDialog} from "@angular/material/dialog";
+import {NewPagadorComponent} from "../new-pagador/new-pagador.component";
+import {MatSnackBar, MatSnackBarRef, SimpleSnackBar} from "@angular/material/snack-bar";
 
 
 @Component({
@@ -12,8 +15,11 @@ import {MatTableDataSource} from "@angular/material/table";
 
 export class PagadorComponent implements OnInit{
 
+  public dialog = inject(MatDialog);
+  private snackBar = inject(MatSnackBar);
 
 constructor(private pagadorService: PagadorService) {
+
 }
 
 
@@ -50,7 +56,7 @@ dataSource = new MatTableDataSource<PagadorElement>();
 
     listPagador[0].pagos.forEach((element:PagadorElement) =>{
       dataPagador.push(element);
-      console.log(element.comercio);
+      //console.log(element.comercio);
 
     });
     this.dataSource = new MatTableDataSource<PagadorElement>(dataPagador);
@@ -93,6 +99,30 @@ dataSource = new MatTableDataSource<PagadorElement>();
 
   }
 
+
+  openCategoryDialog(){
+    const dialogRef = this.dialog.open(NewPagadorComponent, {
+      width: '450px',
+
+    });
+
+    dialogRef.afterClosed().subscribe((result:any) => {
+      if (result == 1){
+        this.openSnackBar(" Pago Agregado","Exitoso");
+        this.getUsuarioPagador();
+      }else if (result == 2){
+        this.openSnackBar("Se Produjo un error","Intente Nuevamente");
+      }
+    });
+  }
+
+  openSnackBar(message: string, action: string):MatSnackBarRef<SimpleSnackBar>{
+
+    return this.snackBar.open(message,action, {
+      duration: 2000
+    })
+
+  }
 
 }
 

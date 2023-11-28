@@ -24,11 +24,19 @@ export class PagadorService {
     return this.http.get(endpoint);
   }
 
+  //OBTIENE TODOS LOS COMERCIOS
   getUsuarioComercio(){
 
     const endpoint = `${base_url}/comercio`;
     return this.http.get(endpoint);
   }
 
+
+  //GUARDAR PAGOS
+  savePagos( body: any){
+
+    const endpoint = `${base_url}/pago`;
+    return this.http.post(endpoint,body);
+  }
 
 }
