@@ -1,0 +1,9 @@
+.pago-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.pago-container > * {
+
+  width: 100%;
+}
